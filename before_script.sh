@@ -9,6 +9,7 @@ git clone https://github.com/FriendsOfCake/travis.git --depth 1 ../travis;
 ../travis/before_script.sh;
 if [ "$PHPCS" != 1 ]; then
 	echo "<?php
+		date_default_timezone_set('UTC');
 		require_once dirname(dirname(__FILE__)) . '/vendor/autoload.php';
 		require_once dirname(dirname(dirname(__FILE__))) . '/lib/Cake/Console/ShellDispatcher.php';
 		return ShellDispatcher::run(\$argv);
