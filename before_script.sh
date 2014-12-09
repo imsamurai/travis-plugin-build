@@ -18,6 +18,7 @@ fi;
 if [ "$PHPCS" = 1 ]; then
 	pear uninstall PHP_CodeSniffer;
 	pear install PHP_CodeSniffer-1.5.5;
+	phpenv rehash;
 	rm -rf ~/.phpenv/versions/$(phpenv version-name)/pear/PHP/CodeSniffer/Standards/CakePHP;
 	git clone https://github.com/imsamurai/cakephp-codesniffer.git --depth 1 ~/.phpenv/versions/$(phpenv version-name)/pear/PHP/CodeSniffer/Standards/CakePHP;
 fi;
